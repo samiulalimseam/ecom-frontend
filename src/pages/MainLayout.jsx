@@ -1,18 +1,20 @@
-import React from 'react';
-import Navbar from '../Components/Shared/Navbar';
-import Footer from '../Components/Shared/Footer';
-import Sidebar from '../Components/Shared/Sidebar';
-import { Outlet } from 'react-router-dom';
+import Navbar from "../Components/Shared/Navbar";
+import Sidebar from "../Components/Shared/Sidebar";
+import { Outlet } from "react-router-dom";
+import { Box, Flex } from "@chakra-ui/layout";
 
 const MainLayout = () => {
-    return (
-        <div style={{width:'100%' , height:'100%'} }>
-            <Navbar></Navbar>
-            <Sidebar></Sidebar>
-            <Outlet></Outlet>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <Box bg={"gray.50"} style={{ width: "100%", height: "100%" }}>
+      <Navbar></Navbar>
+      <Flex marginTop={0}>
+        <Sidebar></Sidebar>
+        <Box p={5} mx={"auto"} w={"100%"} >
+          <Outlet></Outlet>
+        </Box>
+      </Flex>
+    </Box>
+  );
 };
 
 export default MainLayout;
