@@ -11,6 +11,7 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  Flex,
   Input,
   Popover,
   PopoverTrigger,
@@ -20,8 +21,9 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import Profile from "../Profile/Profile";
-import PopOverTrigger from "../PopOver/PopOverTrigger";
+
 import PopOver from "../PopOver/PopOver";
+import { sideBarItems } from "./utility";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -87,6 +89,13 @@ const Navbar = () => {
         >
           Summer `23
         </Text>
+        <Flex>
+          {
+            sideBarItems?.map(item => {
+              return <Button key={item.link}> {item.label} </Button>
+            })
+          }
+        </Flex>
       </Box>
       <Box
         w={"32%"}

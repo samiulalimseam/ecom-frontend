@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   Box,
   Button,
@@ -8,51 +8,20 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+
 import {
-  BsBagCheckFill,
-  BsCardChecklist,
-  BsFillPieChartFill,
-  BsGearFill,
-  BsPersonCheckFill,
+  BsGearFill
 } from "react-icons/bs";
-import { PiBowlFoodFill } from "react-icons/pi";
-import {   Link as RouterLink, useLocation } from "react-router-dom";
-import Profile from "../Profile/Profile";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { sideBarItems } from "./utility";
 
 const Sidebar = () => {
   const {pathname} = useLocation();
   
-  const sideBarItems = [
-    {
-      label: "Dashboard",
-      icon: <BsFillPieChartFill></BsFillPieChartFill>,
-      link: "/dashboard",
-    },
-    {
-      label: "Members",
-      icon: <BsPersonCheckFill></BsPersonCheckFill>,
-      link: "/members",
-    },
-    { label: "Meal", icon: <PiBowlFoodFill></PiBowlFoodFill>, link: "/meal" },
-    {
-      label: "Grocery",
-      icon: <BsBagCheckFill></BsBagCheckFill>,
-      link: "/grocery",
-    },
-    {
-      label: "Chat",
-      icon: <BsBagCheckFill></BsBagCheckFill>,
-      link: "/chat",
-    },
-    {
-      label: "Tasks",
-      icon: <BsCardChecklist></BsCardChecklist>,
-      link: "/tasks",
-    },
-  ];
+ 
   return (
     <Box 
-      display={["none","flex"]}
+      display={["none","none"]}
       flexDirection={"column"}
       justifyContent={"space-between"}
       className="sidebar"

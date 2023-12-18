@@ -8,6 +8,8 @@ import Meal from "../Components/Meal/Meal";
 import Tasks from "../Components/Tasks/Tasks";
 import Grocery from "../pages/Grocery";
 import Chat from "../pages/Chat";
+import DragandDrop from "../Components/DragandDrop";
+import KanBanBoard from "../Components/KanBanBoard";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +48,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/tasks",
-        element: <Tasks></Tasks>, 
+        element: <KanBanBoard />, 
        
       },
     ],
